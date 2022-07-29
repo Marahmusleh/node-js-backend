@@ -1,5 +1,5 @@
 {
-  "name": "salary-employees",
+  "name": "node-js-backend",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Marahmusleh/salary-employees.git"
+    "url": "git+https://github.com/Marahmusleh/node-js-backend.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Marahmusleh/salary-employees/issues"
+    "url": "https://github.com/Marahmusleh/node-js-backend/issues"
   },
-  "homepage": "https://github.com/Marahmusleh/salary-employees#readme",
+  "homepage": "https://github.com/Marahmusleh/node-js-backend#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "bcryptjs": "^2.4.3",
