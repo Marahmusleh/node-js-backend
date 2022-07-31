@@ -26,7 +26,6 @@ db.sequelize.sync().then(() => {
   console.log('Drop and Resync Database with { force: true }');//The table for all models was just (re)created! , db.sequelize.sync() without force : true ,This creates the table if it doesn't exist (and does nothing if it already exists)
   // initial();
 });
-
 // simple route
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to webstarts application." });

@@ -16,7 +16,7 @@ module.exports = function(app) {
     controller.userBoard
   );
 
-  app.post("/api/test/createArticle",controller.createArticle)
+  app.post("/api/test/createArticle/:id",controller.createArticle)
 
   app.get("/api/test/getArticle",controller.getArticle)
 

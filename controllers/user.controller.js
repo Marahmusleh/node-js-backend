@@ -6,15 +6,11 @@ const Article = db.article;
 exports.userBoard = async (req,res , token) => {
   const id = req.params.id;
   var articles = [];
-  Article.findOne({ where: { id } }).then((article) => {
+  Article.findAll({ where: { userId:id } }).then((article) => {
     articles.push({
-      id:article.id,
-      userId:article.userId,
-      img: article.img,
-      title: article.title,
-      text: article.text,
+    article
     });
-  });
+  }); 
   User.findOne({ where: { id } }).then((user) => {
     res.status(200).send({
       id: user.id,
@@ -27,11 +23,11 @@ exports.userBoard = async (req,res , token) => {
 }
 
 exports.createArticle = (req, res) => {
-
-  User.findOne({ where: req.id  }).then((user) =>{
+  const id = req.params.id;
+  User.findOne({ where: {id} }).then((user) =>{
   console.log(user,"iddd")
-  Article.create({
-  userId:user.id,
+  Article.create({  
+  userId:id,
   img:req.body.img,
   title:req.body.title,
   text:req.body.text
@@ -39,10 +35,7 @@ exports.createArticle = (req, res) => {
 })
     .then(article => {
       res.send({       
-        userId:article.userId,
-        img: article.img,
-        title: article.title,
-        text: article.text,
+      article
         });
     })
     .catch(err => {
